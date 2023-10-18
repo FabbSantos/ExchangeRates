@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct ListView: View {
+    @State var items: [String] = [
+        "Go Shopping 1",
+        "Brush Teeth 2",
+        "Study 3"
+    ]
+    
     var body: some View {
         List {
-            Text("Hi")
+            ForEach(items, id: \.self) {
+                item in ListRowView(title: item)
+            }
         }
+        .listStyle(PlainListStyle())
+        .navigationTitle("Todo List 📝")
+        .navigationBarItems(
+            leading: EditButton(),
+            trailing:
+                NavigationLink("Add", destination: AddView())
+        )
     }
 }
 
@@ -22,3 +37,5 @@ struct ListView_Previews: PreviewProvider {
         }
     }
 }
+
+

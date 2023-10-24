@@ -12,17 +12,24 @@ struct ListView: View {
     
     var body: some View {
         List {
-            ForEach(listViewModel.items) {
-                item in
-                ListRowView(item: item)
-                    .onTapGesture {
-                        withAnimation(.linear) {
-                            listViewModel.updateItem(item: item)
+            if listViewModel.items.count == 0 {
+                Text("Enter your first item!")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .foregroundColor(.gray)
+                    .padding(.vertical)
+            } else {
+                ForEach(listViewModel.items) {
+                    item in
+                    ListRowView(item: item)
+                        .onTapGesture {
+                            withAnimation(.linear) {
+                                listViewModel.updateItem(item: item)
+                            }
                         }
-                    }
+                }
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform: listViewModel.moveItem)
             }
-            .onDelete(perform: listViewModel.deleteItem)
-            .onMove(perform: listViewModel.moveItem)
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Todo List 📝")

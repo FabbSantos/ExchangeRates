@@ -20,6 +20,7 @@
 /* Begin PBXFileReference section */
 		24440C362AE323FD00A1A95B /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		24649A722AE7335C001C06AC /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		247FB14F2AE75CB600F9D24C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		24FFC7B22AE0541900D9D614 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FFC7B52AE0541900D9D614 /* TodoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListApp.swift; sourceTree = "<group>"; };
 		24FFC7B92AE0541A00D9D614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 				24FFC7B52AE0541900D9D614 /* TodoListApp.swift */,
 				24FFC7B92AE0541A00D9D614 /* Assets.xcassets */,
 				24FFC7BB2AE0541A00D9D614 /* Preview Content */,
+				247FB14F2AE75CB600F9D24C /* README.md */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";

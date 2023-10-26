@@ -2,7 +2,7 @@
 //  TodoListApp.swift
 //  TodoList
 //
-//  Created by user239336 on 10/18/23.
+//  Created by Fabricio Bahiense on 10/18/23.
 //
 
 import SwiftUI
@@ -29,6 +29,7 @@ struct TodoListApp: App {
             NavigationView{
                 ListView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(listViewModel)
         }
     }

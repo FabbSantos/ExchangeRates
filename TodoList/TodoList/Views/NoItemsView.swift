@@ -15,9 +15,9 @@ struct NoItemsView: View {
                 Text("No items on the list!")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .opacity(0.7)
+//                    .opacity(0.7)
                 Text("There's something you need to remember? Add it to the list!")
-                    .foregroundColor(.gray)
+//                    .foregroundColor(.gray)
                 NavigationLink(
                     destination: AddView(),
                     label: {

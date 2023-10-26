@@ -11,28 +11,29 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
-        List {
-            if listViewModel.items.count == 0 {
-                Text("Enter your first item!")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    .foregroundColor(.gray)
-                    .padding(.vertical)
+        ZStack {
+            if listViewModel.items.isEmpty {
+                NoItemsView()
+                    .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
-                ForEach(listViewModel.items) {
-                    item in
-                    ListRowView(item: item)
-                        .onTapGesture {
-                            withAnimation(.linear) {
-                                listViewModel.updateItem(item: item)
+                List {
+                    ForEach(listViewModel.items) {
+                        item in
+                        ListRowView(item: item)
+                            .onTapGesture {
+                                withAnimation(.linear) {
+                                    listViewModel.updateItem(item: item)
+                                }
                             }
-                        }
+                    }
+                    .onDelete(perform: listViewModel.deleteItem)
+                    .onMove(perform: listViewModel.moveItem)
                 }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
+                .listStyle(PlainListStyle())
             }
         }
-        .listStyle(PlainListStyle())
         .navigationTitle("Todo List 📝")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
             leading: EditButton(),
             trailing:
